@@ -1,0 +1,85 @@
+﻿<Page Title="" Language="C#" MasterPageFile="~/Master1.Master" AutoEventWireup="true" CodeBehind="wbf_home.aspx.cs" Inherits="SIFNET_Portal.wbf_home" %=%>
+
+
+    <!--<%-- <h1>My Master Page</h1>  --%>-->
+    <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "<<--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+    <!--<html xmlns="<--http://www.w3.org/1999/xhtml">-->
+    <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    </asp:Content>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!--<title>Dynamic Image Menu Example</title>-->
+        <link href="jimgMenukwicks.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-easing-1.3.pack.js"></script>
+        <script type="text/javascript" src="js/jquery-easing-compatibility.1.2.pack.js"></script>
+        <script type="text/javascript" src="js/jquery.kwicks-1.5.1.pack.js"></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+                padding: 0;
+                color: #333;
+                /*color: #EDEDED;*/
+                font: normal 0.6em sans-serif,Arial;
+                background-color: #EDEDED;
+                /*background-color: #333;*/
+                background-image: url(../img/bg1.jpg);
+                background-repeat: repeat-x;
+                background-attachment: fixed;
+                background-position: center top;
+                width: 100%;
+            }
+        </style>
+        <style type="text/css">
+            .description {
+                padding-left: 40px;
+            }
+
+            h1 {
+                padding-left: 10px;
+                font: normal 18px Georgia, "Times New Roman", Times, serif;
+            }
+        </style>
+
+
+            <script type="text/javascript">
+                $().ready(function () {
+                    $('.jimgMenu ul').kwicks({ max: 310, duration: 300, easing: 'easeOutQuad' });
+                });
+            </script>
+
+
+
+    </head>
+    <body>
+        <h1>Aplicaciones</h1>
+
+        <div class="jimgMenu">
+            <ul>
+                <li id="presupuesto"><a href="../Template/index.html">Presupuesto</a></li>
+                <li id="planificacion"><a href="#">Planificación</a></li>
+                <li id="contabilidad"><a href="#">Contabilidad</a></li>
+                <li id="gestion_rrhh"><a href="#">Gestion_RRHH</a></li>
+                <li id="tesoreria"><a href="#">Tesoreria</a></li>
+                <li id="req_compras"><a href="#">Req_compras</a></li>
+                <li id="compras"><a href="#">Compras</a></li>
+                <li id="inventarios"><a href="#">Inventarios</a></li>
+                <li id="contabilidad"><a href="#">Contabilidad</a></li>
+                <li id="fotocopias"><a href="#">Fotocopias</a></li>
+                <li id="gerencial"><a href="#">Gerencial</a></li>
+                <li id="contratos"><a href="#">Contratos</a></li>
+            </ul>
+        </div>
+        <br style="clear:both" /><br />
+        <div class="description">
+            <!--<p>A dynamic Menu allowing you to easily navigate any content visually, with a Mootools like effect through the power of Jquery javascript.</p>-->
+        </div>
+        <hr style="width:92%;text-align:center;height:1px;border:1px;color:#e2e2e2;background-color:#e2e2e2;" />
+        <!--<hr style="width:92%;text-align:center;height:1px;border:1px;color:#EDEDED;background-color:#EDEDED;" />-->
+
+    </body>
+    <!--</html>-->
+
+
+
+</Page>

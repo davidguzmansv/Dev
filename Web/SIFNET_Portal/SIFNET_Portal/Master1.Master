@@ -1,0 +1,277 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="SIFNET_Portal.Master1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Master Page</title>
+  
+    <link href="Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"  type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+          
+    <style type="text/css">      
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+        }
+        .modalPopup
+        {
+            background-color: #FFFFFF;
+            width: 800px;
+            height: 425px;
+            border: 3px solid #0DA9D0;
+            border-radius: 12px;
+            padding: 0;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+        <link href="Content/sb-admin-2.css" rel="stylesheet" />
+        <script src="Scripts/jquery-3.1.1.min.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="/Scripts/jquery.min.js"></script>  
+        <script src="/Scripts/popper.min.js"></script>  
+        <script src="/Scripts/bootstrap.min.js"></script>  
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         <div id="Panel_Main" style="box-shadow: 0 0 02px blue;" class="panel panel-secundary">
+                                        <!-- Content Wrapper -->
+             <div id="content-wrapper" class="d-flex flex-column ">
+                                        <!-- Main Content -->
+                 <div id="content">
+                                        <!-- Topbar -->
+                     <nav class="navbar navbar-expand navbar-light bg-primary 
+                         topbar mb-4 static-top shadow" style="height:30px">
+                                        <!-- Sidebar Toggle (Topbar) -->
+                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-2">
+                                 <i class="fa fa-bars"></i>
+                         </button>                     
+                                        <!-- Topbar Search -->   <!-- Barra de Busqueda DESACTIVADA-->
+                         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                             <div class="input-group">
+                                   <asp:Image cssclass="img-profile rounded-circle" id="Image2" img src="Imagenes/Logo_fundasal_icon.jpg" runat="server" Height="30px" Width="30px">
+                                    </asp:Image>
+                                <%-- <img src="Imagenes/Logo_fundasal_icon.jpg" />--%>
+                                 <asp:button cssclass="btn btn-sm btn-primary text-center btn-sm " id="Appnamebtn" Height="30" style="font-size: 12px;font-family: Consolas; " runat="server" Text="Sistema de Información Fundasal  /  SIFNET">
+                                 </asp:button>
+                                     <div class="copyright text-center my-auto text-white-50 offset-2" style="font-size: 12px;font-family: Consolas; ">
+                                          <span>Copyright &copy; FUNDASAL 2020</span>
+                                     </div>                   
+                             </div>
+                         </form>
+                                        <!-- Topbar Navbar -->
+                         <ul class="navbar-nav ml-auto">
+
+
+                                          <!-- Nav Item - Alerts -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown1" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-bell fa-fw fa-1x"></i>
+                                    <asp:button cssclass="btn btn-lg btn-danger btn-sm" id="Master_btn_Alert_m" style="font-size: 11px; font-family: Consolas ;width:25px" Height="20"  OnClick ="btnAlert_m_Click" onlostfocus="btnAlert_m_LostFocus" runat="server" Text="3+">
+                                    </asp:button>
+                                </a>
+
+                                               
+                                        
+                                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" 
+                                                                TargetControlId="Master_btn_Alert_m" 
+                                                                PopupControlID="Alertas"
+                                                                BackgroundCssClass="modalBackground" 
+                                                                DropShadow="true"
+                                                                >
+                                </ajaxToolkit:ModalPopupExtender>
+                                <asp:Panel ID="Alertas" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+                                    <div style="height: 60px">
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                            <ContentTemplate>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <form class="form-inline"></form>
+                                                            <label>.</label>
+                                                    </div> 
+                                                    <img src="Imagenes/cabecera1.JPG" />
+                                                    <textarea id="TextArea2" cols="20" rows="10"  runat="server" >Aqui va el detalle de las Alertas</textarea>
+                                                    <style>   textarea 
+                                                              { 
+                                                                  font-size: 12pt;
+                                                                  width: 737px;  
+                                                                  height: 300px;   
+                                                                  border: none;
+                                                                  border-collapse:collapse;
+                                                                  border-right: #000 1px solid;
+                                                                  border-left: #000 1px solid;
+                                                                  padding: 5px;
+                                                                  resize: none;
+                                                              } 
+                                                    </style>  
+                                                    <img src="Imagenes/Footer1.JPG" />   
+                                               </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                    <asp:Button ID="btnClose" runat="server" Text="Cerrar" />
+                                </asp:Panel>
+                            </li>
+                                                <!-- Nav Item - Messages -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     <i class="fas fa-envelope fa-fw fa-1x"></i>  
+                                    <asp:button cssclass="btn btn-lg btn-danger btn-sm" id="Master_btnMsg_m" style="font-size: 11px; font-family: Consolas ;width:25px" Height="20"  onclick="btnMsg_m_Click" runat="server" Text="7+">
+                                    </asp:button>
+                                </a>
+
+                                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" 
+                                                                TargetControlId="Master_btnMsg_m" 
+                                                                PopupControlID="Mensajes"
+                                                                BackgroundCssClass="modalBackground" 
+                                                                DropShadow="true"
+                                                                >
+                                </ajaxToolkit:ModalPopupExtender>
+                                <asp:Panel ID="Mensajes" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+                                    <div style="height: 60px">
+                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                            <ContentTemplate>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <form class="form-inline"></form>
+                                                            <label>.</label>
+                                                    </div> 
+                                                    <img src="Imagenes/cabecera1.JPG" />
+                                                    <textarea id="TextArea3" cols="20" rows="10"  runat="server" >Aqui va el detalle de los Mensajes</textarea>
+                                                    <style>   textarea 
+                                                              { 
+                                                                  font-size: 12pt;
+                                                                  width: 737px;  
+                                                                  height: 300px;   
+                                                                  border: none;
+                                                                  border-collapse:collapse;
+                                                                  border-right: #000 1px solid;
+                                                                  border-left: #000 1px solid;
+                                                                  padding: 5px;
+                                                                  resize: none;
+                                                              } 
+                                                    </style>  
+                                                    <img src="Imagenes/Footer1.JPG" />   
+                                               </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                    <asp:Button ID="btnClose2" runat="server" Text="Cerrar" />
+                                </asp:Panel>
+                             
+                            </li>
+                            <div class="topbar-divider d-none d-sm-block"></div>
+                                                <!-- Nav Item - User Information -->
+                             <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown1_btn_m" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <%--<span class="mr-2 d-none d-lg-inline text-gray-600 small">David Guzman</span>--%>
+                                    <asp:button cssclass="btn btn-lg btn-primary btn-sm" id="Master_btnDepto_m" style="width:400px" Height="20" onclick="btnDepto_m_Click" runat="server" Text="Departamento">
+
+                                    </asp:button>
+                                    
+                                </a>
+                             </li>
+
+
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown_btn_m" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <%--<span class="mr-2 d-none d-lg-inline text-gray-600 small">David Guzman</span>--%>
+                                    <asp:button cssclass="btn btn-lg btn-primary btn-sm text-white" id="Master_btnUser_m" style="font-size: 14px; font-family: Consolas ;width:200px" Height="20" onclick="btnUser_m_Click" runat="server" Text="Usuario">
+                                    </asp:button>
+                                   
+                                    <asp:Image cssclass="img-profile rounded-circle" id="Master_imgUrl_m" ImageUrl ="~/Master1.Master.cs?FileName=gg56.jpg" runat="server" Height="38px" Width="38px">
+                                    </asp:Image>
+                                 
+                                  
+                                </a>
+
+                                                <!-- Dropdown - User Information -->
+                                <%--  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Logout
+                                    </a>
+                                </div>--%>
+                               
+
+                            </li>
+
+                            <%--<li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown1_btn_m" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <%--<span class="mr-2 d-none d-lg-inline text-gray-600 small">David Guzman</span>--%>
+                               <%--     <asp:button cssclass="btn btn-lg btn-dark btn-sm" id="Master_btnDepto_m" style="width:400px" onclick="btnDepto_m_Click" runat="server" Text="Departamento">
+
+                                    </asp:button>
+                                    
+                                </a>--%>
+                                <%--                  <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Logout
+                                    </a>
+                                </div>--%>
+                            <%--</li>--%>
+                        </ul>
+                     </nav>
+                                            <!-- End of Topbar -->
+                                            <!-- End of Main Content -->
+                                            <!-- End of Content Wrapper -->
+                 </div>
+             </div>
+         <%--</div>--%>
+                                            <!-- End  -->
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">  
+     </asp:ContentPlaceHolder>
+
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">  
+           <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; FUNDASAL 2019</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
+     </asp:ContentPlaceHolder>
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">  
+     </asp:ContentPlaceHolder>
+    </form>
+  
+</body>
+</html>

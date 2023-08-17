@@ -1,0 +1,100 @@
+
+.jimgMenu {
+	position:relative;
+	margin: 0px 0px 0px 175px;
+	padding: 0px;
+	width:1225px;
+	height:200px;
+	overflow: hidden;
+}
+
+.jimgMenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	height: 200px;
+	position: relative;
+	}
+	
+.jimgMenu ul li {
+	width: 95px;
+	float: left;
+	display: block;
+	overflow: hidden;
+}
+
+.jimgMenu ul li a {
+	text-indent: -1000px;
+	background:#fff repeat scroll 0%;
+	border-right: 2px solid #fff;
+	cursor:pointer;
+	display:block;
+	overflow: hidden;
+	height: 200px;
+}
+
+.jimgMenu ul li#presupuesto a {
+	background: url(images/presupuesto.jpg) repeat scroll 0%;
+   
+}
+
+.jimgMenu ul li#planificacion a {
+	background: url(images/planificacion.jpg) repeat scroll 0%;
+
+}
+
+.jimgMenu ul li#contabilidad a {
+	background: url(images/contabilidad.jpg) repeat scroll 0%;
+  
+}
+
+.jimgMenu ul li#gestion_rrhh a {
+	background: url(images/gestion_rrhh.jpg) repeat scroll 0%;
+
+}
+
+.jimgMenu ul li#tesoreria a {
+	background: url(images/tesoreria.jpg) repeat scroll 0%;
+	border-right-style: none;
+}
+
+.jimgMenu ul li#req_compras a {
+        background: url(images/req_compras.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+.jimgMenu ul li#compras a {
+        background: url(images/compras.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+.jimgMenu ul li#inventarios a {
+        background: url(images/inventarios.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+.jimgMenu ul li#caja a {
+        background: url(images/urban.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+
+.jimgMenu ul li#fotocopias a {
+        background: url(images/urban.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+.jimgMenu ul li#gerencial a {
+        background: url(images/urban.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+.jimgMenu ul li#contratos a {
+        background: url(images/urban.jpg) repeat scroll 0%;
+        border-right-style: none;
+}
+
+.clear {
+	clear: both;
+}
